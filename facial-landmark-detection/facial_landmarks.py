@@ -61,9 +61,9 @@ def eyeStateDetection(cordDict,framecount):
         countDict = Counter(eyeStateArr)
         
         #count the occurances of slee
-        if countDict.get('closed') != None and countDict.get('closed') > 2:
+        if countDict.get('closed') and countDict.get('closed') > 2:
             return 'sleeping'
-        elif countDict.get('closed') != None and countDict.get('closed') > 0:
+        elif countDict.get('closed') and countDict.get('closed') > 0:
             if 'closed' in eyeStateArr[-3:]:
                 return 'blinking'
             else:
